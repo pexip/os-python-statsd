@@ -1,0 +1,23 @@
+From: Gilles Dubuc <gilles@wikimedia.org>
+Subject: fix assert_called_once() calls
+
+Origin: upstream, https://github.com/jsocol/pystatsd/commit/f980e017191ce1ebc9f49c5c362ee7a57b46e6fd
+Bug-Debian: http://bugs.debian.org/808056
+--- a/statsd/tests.py
++++ b/statsd/tests.py
+@@ -942,7 +942,7 @@
+     addr = ('127.0.0.1', 1234)
+     cl = _tcp_client(addr=addr[0], port=addr[1])
+     cl.incr('foo')
+-    cl._sock.sendall.assert_called_once()
++    eq_(1, cl._sock.sendall.call_count)
+     cl._sock.sendall.side_effect = socket.error
+     with assert_raises(socket.error):
+         cl.incr('foo')
+@@ -954,5 +954,4 @@
+     test_timeout = 321
+     cl = TCPStatsClient(timeout=test_timeout)
+     cl.incr('foo')
+-    cl._sock.settimeout.assert_called_once()
+-    cl._sock.settimeout.assert_called_with(test_timeout)
++    cl._sock.settimeout.assert_called_once_with(test_timeout)

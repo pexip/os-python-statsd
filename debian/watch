@@ -1,0 +1,2 @@
+version=3
+https://github.com/jsocol/pystatsd/releases .*/archive/v(.+)\.tar\.gz

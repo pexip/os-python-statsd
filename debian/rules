@@ -1,0 +1,21 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+export PYBUILD_NAME=statsd
+
+%:
+	dh $@ --with python2,python3 --buildsystem=pybuild
+
+get-orig-source:
+	uscan --download-current-version --rename --destdir ../tarballs
+
+override_dh_clean:
+	dh_clean
+	# dh_clean does not support recursive deletions via debian/clean
+	# so we have to explicitly delete the egg directories there.
+	# http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=511048
+	rm -rf mock-*.egg
+	rm -rf nose-*.egg
+
+.PHONY: get-orig-source override_dh_clean

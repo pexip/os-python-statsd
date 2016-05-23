@@ -1,0 +1,61 @@
+python-statsd (3.2.1-2) unstable; urgency=medium
+
+  [ Ondřej Nový ]
+  * Fixed VCS URL (https)
+
+  [ Filippo Giunchedi ]
+  * debian/control: fix Description for python-statsd (Closes: #810547)
+  * debian/patches/808056.patch:
+      fix assert_called_once() calls, thanks Gilles Dubuc (Closes: #808056)
+
+ -- Filippo Giunchedi <filippo@debian.org>  Mon, 23 May 2016 13:18:22 +0100
+
+python-statsd (3.2.1-1) unstable; urgency=medium
+
+  * New upstream release
+    + Restore `StatsClient(host, port, prefix)` argument order.
+
+ -- Filippo Giunchedi <filippo@debian.org>  Thu, 19 Nov 2015 19:12:27 +0000
+
+python-statsd (3.2-1) unstable; urgency=medium
+
+  * New upstream release
+    + optional IPv6 support
+    + sub-millisecond timestamps
+    + TCP client
+
+ -- Filippo Giunchedi <filippo@debian.org>  Thu, 22 Oct 2015 10:34:20 +0100
+
+python-statsd (3.0.1-2) unstable; urgency=medium
+
+  * Build python3-statsd, thanks Bernhard Schmidt (Closes: #778601)
+
+ -- Filippo Giunchedi <filippo@debian.org>  Fri, 10 Jul 2015 18:09:04 +0100
+
+python-statsd (3.0.1-1) unstable; urgency=medium
+
+  [ Filippo Giunchedi ]
+  * New upstream release. Closes: #772936
+  * Migrate away from githubredir in debian/watch
+  * Move to Standards-Versions 3.9.6, no changes
+
+ -- Filippo Giunchedi <filippo@debian.org>  Fri, 12 Dec 2014 10:41:21 +0000
+
+python-statsd (2.0.3-1) unstable; urgency=low
+
+  [ Antoine Musso]
+  * New upstream release. Closes: #726980
+  * Correct Homepage and description in debian/changelog, was refering to the
+    pypi module 'python-statsd' when this package is the module 'statsd'
+    Closes: #736256
+
+  [Jakub Wilk]
+  * Use canonical URIs for Vcs-* fields.
+
+ -- Antoine Musso <hashar@free.fr>  Thu, 20 Feb 2014 17:44:24 +0000
+
+python-statsd (2.0.1-1) unstable; urgency=low
+
+  * Initial release. Closes: #703613
+
+ -- Antoine Musso <hashar@free.fr>  Thu, 18 Apr 2013 10:55:24 +0000
