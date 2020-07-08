@@ -2,7 +2,7 @@ python-statsd (3.2.1-2pexip2) pexip; urgency=medium
 
   * Bump release version to enable building for Python 3. 
 
- -- Will Miller <will.miller@pexip.com> Wed, 02 Oct 2019 12:27:16 +0000
+ -- Will Miller <will.miller@pexip.com>  Wed, 02 Oct 2019 12:27:16 +0000
 
 python-statsd (3.2.1-2pexip1) pexip; urgency=medium
 
