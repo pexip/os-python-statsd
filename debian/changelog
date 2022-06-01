@@ -1,3 +1,36 @@
+python-statsd (3.3.0-2) unstable; urgency=medium
+
+  [ Ondřej Nový ]
+  * Bump Standards-Version to 4.4.1.
+
+  [ Thomas Goirand ]
+  * Team upload.
+  * Uploading to unstable.
+
+ -- Thomas Goirand <zigo@debian.org>  Mon, 21 Oct 2019 09:43:12 +0200
+
+python-statsd (3.3.0-1) experimental; urgency=medium
+
+  [ Ondřej Nový ]
+  * d/control: Set Vcs-* to salsa.debian.org
+  * d/copyright: Use https protocol in Format field
+  * d/control: Remove ancient X-Python-Version field
+  * d/control: Remove ancient X-Python3-Version field
+  * Convert git repository from git-dpm to gbp layout
+  * Use debhelper-compat instead of debian/compat.
+
+  [ Thomas Goirand ]
+  * Team upload.
+  * New upstream release.
+  * Ran wrap-and-sort -bast.
+  * Removed Python 2 support (Closes: #938197).
+  * Removed debian/gbp.conf which contains things that should go in
+    ~/.gbp.conf rather than in a package.
+  * Removed 808056.patch applied upstream.
+  * Standards-Version bump to 4.4.0.
+
+ -- Thomas Goirand <zigo@debian.org>  Tue, 17 Sep 2019 23:13:32 +0200
+
 python-statsd (3.2.1-2pexip2) pexip; urgency=medium
 
   * Bump release version to enable building for Python 3. 

@@ -1,11 +1,9 @@
-import os
-import re
 from setuptools import find_packages, setup
 
 
 setup(
     name='statsd',
-    version='3.2.1',
+    version='3.3.0',
     description='A simple statsd client.',
     long_description=open('README.rst').read(),
     author='James Socol',
@@ -24,13 +22,11 @@ setup(
         'Operating System :: OS Independent',
         'Programming Language :: Python',
         'Programming Language :: Python :: 2',
-        'Programming Language :: Python :: 2.5',
-        'Programming Language :: Python :: 2.6',
         'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.2',
-        'Programming Language :: Python :: 3.3',
         'Programming Language :: Python :: 3.4',
+        'Programming Language :: Python :: 3.5',
+        'Programming Language :: Python :: 3.6',
         'Topic :: Software Development :: Libraries :: Python Modules',
     ],
 )
