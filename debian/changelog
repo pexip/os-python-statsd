@@ -1,3 +1,35 @@
+python-statsd (4.0.1-1) unstable; urgency=medium
+
+  * Team upload.
+  * d/watch: adapt to new github changes
+  * New upstream version
+  * d/control: 
+       - Use python3-nose2 (Closes: #1018583)
+       - Add pybuild-plugin-pyproject to Build-Dep
+ 
+ -- Mohammed Bilal <mdbilal@disroot.org>  Sun, 04 Dec 2022 17:22:27 +0530
+
+python-statsd (3.3.0-4) unstable; urgency=medium
+
+  [ Debian Janitor ]
+  * Update watch file format version to 4.
+  * Bump debhelper from deprecated 9 to 13.
+  * Set upstream metadata fields: Repository-Browse.
+  * Remove unnecessary get-orig-source-target.
+  * Update standards version to 4.6.1, no changes needed.
+
+ -- Jelmer Vernooĳ <jelmer@debian.org>  Wed, 16 Nov 2022 10:22:41 +0000
+
+python-statsd (3.3.0-3) unstable; urgency=medium
+
+  [ Ondřej Nový ]
+  * d/control: Update Maintainer field with new Debian Python Team
+    contact address.
+  * d/control: Update Vcs-* fields with new Debian Python Team Salsa
+    layout.
+
+ -- Sandro Tosi <morph@debian.org>  Sat, 04 Jun 2022 12:21:57 -0400
+
 python-statsd (3.3.0-2) unstable; urgency=medium
 
   [ Ondřej Nový ]
