@@ -1,5 +1,3 @@
-from __future__ import absolute_import, division, unicode_literals
-
 import random
 from collections import deque
 from datetime import timedelta
@@ -9,6 +7,10 @@ from .timer import Timer
 
 class StatsClientBase(object):
     """A Base class for various statsd clients."""
+
+    def close(self):
+        """Used to close and clean up any underlying resources."""
+        raise NotImplementedError()
 
     def _send(self):
         raise NotImplementedError()

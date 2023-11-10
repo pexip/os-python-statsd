@@ -1,5 +1,28 @@
-Statsd Changelog
-================
+# Statsd Changelog
+
+## UNRELEASED
+
+## v4.0.1
+
+### Fixed
+
+- Updated PyPI trove classifiers for current Python versions.
+
+## v4.0
+
+### Added
+
+- Updates support to Python 3.7 through 3.11.
+- Added `close()` method to UDP-based `StatsClient`. (#136)
+
+### Dropped
+
+- Drops support for Python 2.
+
+### Fixed
+
+- Using a timing decorator on an async function should now properly measure the
+  execution time, instead of counting immediately. See #119.
 
 Version 3.3
 -----------

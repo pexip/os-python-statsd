@@ -1,13 +1,10 @@
-from __future__ import with_statement
+import asyncio
 import functools
 import random
 import re
 import socket
 from datetime import timedelta
-from unittest import SkipTest
-
-import mock
-from nose.tools import eq_
+from unittest import SkipTest, mock
 
 from statsd import StatsClient
 from statsd import TCPStatsClient
@@ -32,6 +29,10 @@ make_val = {
     'tcp': lambda x, addr: mock.call(str.encode(x + '\n')),
     'unix': lambda x, addr: mock.call(str.encode(x + '\n')),
 }
+
+
+def eq_(a, b, msg=None):
+    assert a == b, msg
 
 
 def _udp_client(prefix=None, addr=None, port=None, ipv6=False):
@@ -68,7 +69,7 @@ def _timer_check(sock, count, proto, start, end):
     send = send_method[proto](sock)
     eq_(send.call_count, count)
     value = send.call_args[0][0].decode('ascii')
-    exp = re.compile('^%s:\d+|%s$' % (start, end))
+    exp = re.compile(r'^%s:\d+|%s$' % (start, end))
     assert exp.match(value)
 
 
@@ -649,6 +650,30 @@ def _test_timer_decorator_exceptions(cl, proto):
         foo()
 
     _timer_check(cl._sock, 1, proto, 'foo', 'ms')
+
+
+def test_coroutine_timer_decorator():
+    event_loop = asyncio.new_event_loop()
+    asyncio.set_event_loop(event_loop)
+
+    already = False
+    cl = _udp_client()
+
+    def _send(*_):
+        nonlocal already
+        assert already is True, '_send called before coroutine completed'
+
+    cl._send = _send
+
+    @cl.timer('bar')
+    async def inner():
+        nonlocal already
+        await asyncio.sleep(0)
+        already = True
+        return None
+
+    event_loop.run_until_complete(inner())
+    event_loop.close()
 
 
 def test_timer_decorator_exceptions_udp():
