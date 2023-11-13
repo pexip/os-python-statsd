@@ -7,9 +7,6 @@ export PYBUILD_NAME=statsd
 %:
 	dh $@ --with python3 --buildsystem=pybuild
 
-get-orig-source:
-	uscan --download-current-version --rename --destdir ../tarballs
-
 override_dh_clean:
 	dh_clean
 	# dh_clean does not support recursive deletions via debian/clean
@@ -18,4 +15,4 @@ override_dh_clean:
 	rm -rf mock-*.egg
 	rm -rf nose-*.egg
 
-.PHONY: get-orig-source override_dh_clean
+.PHONY: override_dh_clean

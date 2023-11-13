@@ -1,2 +1,4 @@
-version=3
-https://github.com/jsocol/pystatsd/releases .*/archive/v(.+)\.tar\.gz
+version=4
+opts="mode=git,dversionmangle=auto" \
+https://github.com/jsocol/pystatsd.git \
+refs/tags/v?@ANY_VERSION@

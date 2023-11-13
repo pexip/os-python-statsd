@@ -1,5 +1,3 @@
-from __future__ import absolute_import, division, unicode_literals
-
 import socket
 
 from .base import StatsClientBase, PipelineBase
@@ -45,6 +43,11 @@ class StatsClient(StatsClientBase):
         except (socket.error, RuntimeError):
             # No time for love, Dr. Jones!
             pass
+
+    def close(self):
+        if self._sock and hasattr(self._sock, 'close'):
+            self._sock.close()
+        self._sock = None
 
     def pipeline(self):
         return Pipeline(self)
