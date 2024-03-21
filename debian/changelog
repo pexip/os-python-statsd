@@ -1,3 +1,12 @@
+python-statsd (4.0.1-2) unstable; urgency=medium
+
+  * Team upload.
+  * upstream uses unittest.mock now, drop dep. on python3-mock
+  * use new dh-sequence-python3
+  * set Rules-Requires-Root: no
+
+ -- Alexandre Detiste <tchet@debian.org>  Thu, 21 Mar 2024 22:21:14 +0100
+
 python-statsd (4.0.1-1) unstable; urgency=medium
 
   * Team upload.
