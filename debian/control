@@ -13,7 +13,7 @@ Build-Depends:
  python3-nose2,
  python3-setuptools,
 Rules-Requires-Root: no
-Standards-Version: 4.6.1
+Standards-Version: 4.7.2
 Homepage: https://github.com/jsocol/pystatsd/
 Vcs-Git: https://salsa.debian.org/python-team/packages/python-statsd.git
 Vcs-Browser: https://salsa.debian.org/python-team/packages/python-statsd
@@ -25,7 +25,7 @@ Depends:
  ${python3:Depends},
  ${shlibs:Depends},
 Description: Python client for the statsd daemon (Python 3)
- A python client for Etsy's stasd server. A friendly front-end to Graphite.
+ A Python client for Etsy's stasd server. A friendly front-end to Graphite.
  .
  The package contains the pypi package `statsd` which is the most popular
  `statsd` module on pypi.
